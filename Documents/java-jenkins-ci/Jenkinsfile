@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                bat 'javac Program.java'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                bat 'java Program'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'CI demonstration completed successfully.'
+            }
+        }
+    }
+}
